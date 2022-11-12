@@ -16,6 +16,6 @@ int main (int argc, char *argv[]){
         fat = fat * i; 
         i++;
     }
-    printf("%ld", fat);
+    printf("%d", fat);
     return 0;
 }
