@@ -8,14 +8,14 @@
 #include <stdio.h>
 
 int main (int argc, char *argv[]){
-    int n = 0;
-    printf("digite um numero maior que 1:\n");
-    scanf("%d", &n);
+    long int n = 0;
+    printf("digite um numero positivo:\n");
+    scanf("%ld", &n);
     int i = 1, fat = 1;
     while(i <= n){
         fat = fat * i; 
         i++;
     }
-    printf("%d", fat);
+    printf("%ld", fat);
     return 0;
 }
