@@ -18,8 +18,6 @@ int main (int argc, char *argv[]){
     xC = xA - xB;
     yC = yA - yB;
 
-    float raiz = (sqrtf((pow(xC,2))+(pow(yC,2))));
-
     float A = (xC*yC)/2;
 
     printf("%g", A);
