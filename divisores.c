@@ -5,9 +5,19 @@
  * Criado em: 24/11
 */
 
-int main (int argc, char *argv[]){
-    
+#include <stdio.h>
 
-    
+int main (int argc, char *argv[]){
+    int n, m = 0;
+    int i = 1;
+    printf("digite um inteiro positivo\n");
+    scanf("%d", &n);
+
+    for(m=i; m<=n; m++){
+        if(n % m == 0){
+            printf("%d, ", m);
+        }
+    }
+
     return 0;
 }
