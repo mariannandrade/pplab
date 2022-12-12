@@ -17,7 +17,6 @@ int main (void){
     
     printf("digite uma frase qualquer:\n");
     fgets(string, 64, stdin);
-
     tam = strlen(string)-1;
     s = tam;
 
@@ -25,7 +24,6 @@ int main (void){
         reverte[i] = toupper(string[s]);
         s = s-1;
     }
-
     reverte[strlen(string)] = '\0';
     printf("%s", reverte);
     return 0;
