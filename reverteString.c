@@ -23,7 +23,7 @@ int main (void){
 
     for(i=0; tam >= i; i++){
         reverte[i] = toupper(string[s]);
-        s--;
+        s = s-1;
     }
 
     reverte[strlen(string)] = '\0';
