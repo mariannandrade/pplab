@@ -11,7 +11,7 @@ int main (int argc, char *argv[]){
     int n = 0;
     int i = 1;
     int soma = 0;
-    printf("digite seu numero:\n");
+    printf("digite seu numero: ");
     scanf("%d", &n);
 
 while (n>=i){
@@ -21,6 +21,6 @@ while (n>=i){
     }
     i+=1;
 }
-printf("%d", soma);
+printf("resultado da soma dos divisores: %d", soma);
 return 0;
 }

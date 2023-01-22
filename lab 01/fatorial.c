@@ -6,16 +6,18 @@
 */
 
 #include <stdio.h>
+#include <stdint.h>
 
 int main (int argc, char *argv[]){
     long int n = 0;
     printf("digite um numero positivo:\n");
     scanf("%ld", &n);
-    int i = 1, fat = 1;
+    long int i = 1;
+    long int fat = 1;
     while(i <= n){
         fat = fat * i; 
         i++;
     }
-    printf("%d", fat);
+    printf("%ld", fat);
     return 0;
 }
