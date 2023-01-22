@@ -11,9 +11,9 @@ int somaprimos(int inicio, int fim);
 
 int main(int argc, char *argv[]){
     int menor, maior;
-    printf("digite um intervalo em que o primeiro numero seja maior que o segundo\n");
+    printf("digite um intervalo em que o primeiro numero seja maior que o segundo: ");
     scanf("%d %d", &menor, &maior);
-    printf("%d", somaprimos(menor, maior));
+    printf("a soma dos primos equivale a: %d", somaprimos(menor, maior));
     return 0;
 }
 

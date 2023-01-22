@@ -10,9 +10,9 @@
 
 int main (int argc, char *argv[]){
     float xA, xB, yA, yB, xC, yC;
-    printf("digite as coordenadas do ponto A\n");
+    printf("digite as coordenadas do ponto A: ");
     scanf("%f %f", &xA, &yA);
-    printf("digite as coordenadas do ponto B\n");
+    printf("digite as coordenadas do ponto B: ");
     scanf("%f %f", &xB, &yB);
 
     xC = xA - xB;
@@ -20,7 +20,7 @@ int main (int argc, char *argv[]){
 
     float A = (xC*yC)/2;
 
-    printf("%g", A);
+    printf("a area do triangulo retangulo equivale a: %g", A);
 
     return 0;
 }

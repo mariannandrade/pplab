@@ -9,7 +9,7 @@
 
 int main (int argc, char *argv[]){
     int n, X;
-    printf("digite um numero inteiro positivo\n");
+    printf("digite um numero inteiro positivo: ");
     scanf("%d", &n);
     int seq = n;
 
@@ -23,6 +23,6 @@ int main (int argc, char *argv[]){
             seq = seq + X;
         }
     }
-    printf("%d", seq);
+    printf("a sequencia de Hailstone equivale a: %d", seq);
     return 0;
 }
