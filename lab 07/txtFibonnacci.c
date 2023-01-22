@@ -7,24 +7,26 @@
 
 #include <stdio.h>
 
-int fib(int n);
+int fib(int j);
 
 int main (void){
     int n = 0;
-    FILE *fiboarq;
+
+    FILE * fiboarq;
 
     printf("digite um numero ate 94:\n");
-    scanf("%d%c*", &n);
+    scanf("%d%*c", &n);
 
-    fiboarq = fopen("fibonac.txt", "w+");
+    fiboarq = fopen("fibonacci.txt", "w");
 
     for(int i = 0; i<n; i++){
-        fprintf(fiboarq, "%d\n", fib(n));
+        fprintf(fiboarq, "%d\n", fib(i));
     }
 
     printf("%d", fib(n));
 
     fclose(fiboarq);
+
     return 0;
 }
 
