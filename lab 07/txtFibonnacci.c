@@ -23,7 +23,7 @@ int main (void){
         fprintf(fiboarq, "%d\n", fib(i));
     }
 
-    printf("%d", fib(n));
+    printf("%d", fib(n-1));
 
     fclose(fiboarq);
 
