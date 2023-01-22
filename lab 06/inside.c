@@ -6,58 +6,56 @@
 */
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#define n = 500
+#include <string.h>
 
+#define N 500
+
+void getstr(char * str, long long int nchar);
 int contem(char * s1, char * s2);
 
-int main (void){
-    int idx = 0;
-    char s1[n];
-    char s2[n];
-    printf("digite uma string: \n");
-    getstr(s1, n);
-    printf("digite outra string: \n");
-    getstr(s2, n);
-    idx = contem(s1, s2);
-    if(idx >= 0){
-        for(int i = 0; i<strlen(s2); i++){
-            if(i == idx){
-                printf("*");
-            }
-            if(i == idx+strlen(s1)-1){
-                printf("*");
-            }
+int main(void){
+    char s1[N];
+    char s2[N];
+    int id;
+    printf("Entre com uma string: ");
+    getstr(s1, N);
+    printf("Entre com outra string: ");
+    getstr(s2, N);
+    id = contem(s1, s2);
+    if(id >= 0) {
+        for(int i = 0; i < strlen(s2); i++) {
+            if(i == id) printf("*");
+            printf("%c", s2[i]);
+            if(i == id + strlen(s1)-1) printf("*");
         }
-        if(idx+strlen(s1) == strlen(s2)){
-            printf("\n");
-        }
-    }
-    else{
-        printf("nao contem");
-    }
-    return 0;
+        printf("\n");
+    } else
+        printf("A segunda não contém a primeira!\n");
+    return EXIT_SUCCESS;
 }
 
-int contem(char * s1, char * s2){
+int contem(char * s1, char * s2) {
     int i, j;
-    int n1 = strlen(s1);
-    int n2 = strlen(s2);
-    for(i = 0; i < n2; i++){
-        if(s1[0] == s2[i]){
-            for(j = 1; j < n1; j++){
-                if(i+j >= n2){
-                    return -1;
-                }
-                if(s1[j] != s2[i+j]){
-                    break;
-                }
+    int n1 = strlen(s1), n2 = strlen(s2);
+    for(i = 0; i < n2; i++) {
+        if(s1[0] == s2[i]) {
+            for(j = 1; j < n1; j++) {
+                if(i+j >= n2) return -1;
+                if(s1[j] != s2[i+j]) break;
             }
-            if(j==n1){
-                return i;
-            }
+            if(j == n1) return i;
         }
     }
     return -1;
+}
+
+void getstr(char * str, long long int nchar) {
+    char c;
+    long long int i;
+    for(i = 0; i < nchar && (c = getchar()) != '\n'; i++)
+        str[i] = c;
+    str[(i >= nchar) ? nchar - 1 : i] = '\0';
+    if(i >= nchar) // precisa limpar o buffer do teclado
+        while ((c = getchar()) != '\n' && c != EOF);
 }
