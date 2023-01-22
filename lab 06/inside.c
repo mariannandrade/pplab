@@ -18,9 +18,9 @@ int main(void){
     char s1[N];
     char s2[N];
     int id;
-    printf("Entre com uma string: ");
+    printf("digite a primeira string: ");
     getstr(s1, N);
-    printf("Entre com outra string: ");
+    printf("digite outra string: ");
     getstr(s2, N);
     id = contem(s1, s2);
     if(id >= 0) {
@@ -30,9 +30,11 @@ int main(void){
             if(i == id + strlen(s1)-1) printf("*");
         }
         printf("\n");
+
     } else
-        printf("A segunda não contém a primeira!\n");
-    return EXIT_SUCCESS;
+        printf("a primeira nao esta na segunda\n");
+
+    return 0;
 }
 
 int contem(char * s1, char * s2) {
@@ -53,9 +55,11 @@ int contem(char * s1, char * s2) {
 void getstr(char * str, long long int nchar) {
     char c;
     long long int i;
-    for(i = 0; i < nchar && (c = getchar()) != '\n'; i++)
+    for(i = 0; i < nchar && (c = getchar()) != '\n'; i++){
         str[i] = c;
+    }
     str[(i >= nchar) ? nchar - 1 : i] = '\0';
-    if(i >= nchar) // precisa limpar o buffer do teclado
+    if(i >= nchar){
         while ((c = getchar()) != '\n' && c != EOF);
+    }
 }
